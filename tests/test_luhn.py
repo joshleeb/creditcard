@@ -1,4 +1,4 @@
-from creditcard_validator.luhn import Luhn
+from cc_val.luhn import Luhn
 
 
 class TestLuhn:
