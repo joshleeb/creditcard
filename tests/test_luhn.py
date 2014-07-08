@@ -18,6 +18,12 @@ class TestLuhn:
     for n in self.invalid_numbers:
       yield self.check_invalid_numbers, n
 
+  def test_number_input_as_string(self):
+    assert self.luhn.is_valid("123455") is True
+
+  def test_number_input_as_int(self):
+    assert self.luhn.is_valid(123455) is True
+
   def check_valid_numbers(self, n):
     assert self.luhn.is_valid(n) is True
 

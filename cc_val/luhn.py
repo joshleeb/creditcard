@@ -16,4 +16,7 @@ class Luhn:
     return check_digit
 
   def is_valid(self, seq):
+    if isinstance(seq, int):
+      seq = str(seq)
+
     return int(seq[-1]) == self.calculate_check_digit(seq[:-1])
