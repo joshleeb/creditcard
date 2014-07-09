@@ -1,4 +1,4 @@
-from creditcard.luhn_validator import LuhnValidator
+from creditcard.luhn import LuhnValidator
 from nose.tools import raises
 
 

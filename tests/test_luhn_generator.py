@@ -1,5 +1,5 @@
-from creditcard.luhn_validator import LuhnValidator
-from creditcard.luhn_generator import LuhnGenerator
+from creditcard.luhn import LuhnValidator
+from creditcard.luhn import LuhnGenerator
 from nose.tools import raises
 import random
 
