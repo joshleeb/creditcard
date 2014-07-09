@@ -10,6 +10,9 @@ class TestLuhn:
                           5548175508461272, 6399487244535238, 123455]
     self.invalid_numbers = [79927398712, 455644003888259, 12894310578,
                             66929644595, 1950254148103, 670367965]
+    self.check_digits = [{"number": 12345, "check_digit": 5},
+                         {"number": 492939528948453, "check_digit": 1},
+                         {"number": 670984227749358, "check_digit": 7}]
     self.invalid_types = [12345.5, "12345.5", "hello", -12345]
 
   def test_valid_numbers(self):
@@ -19,6 +22,10 @@ class TestLuhn:
   def test_invalid_numbers(self):
     for n in self.invalid_numbers:
       yield self.check_invalid_numbers, n
+
+  def test_calculates_correct_check_digit(self):
+    for n in self.check_digits:
+      yield self.check_correct_check_digit, n
 
   def test_number_input_as_string(self):
     assert self.luhn.is_valid("123455") is True
@@ -35,6 +42,9 @@ class TestLuhn:
 
   def check_invalid_numbers(self, n):
     assert self.luhn.is_valid(n) is False
+
+  def check_correct_check_digit(self, n):
+    assert self.luhn.calculate_check_digit(n["number"]) == n["check_digit"]
 
   @raises(TypeError)
   def check_invalid_input_types(self, n):
