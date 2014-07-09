@@ -1,10 +1,10 @@
-from cc_val.luhn import Luhn
+from creditcard.luhn_validator import LuhnValidator
 from nose.tools import raises
 
 
-class TestLuhn:
+class TestLuhnValidator:
   def __init__(self):
-    self.luhn = Luhn()
+    self.luhn = LuhnValidator()
 
     self.valid_numbers = [79927398713, 4916123235800351, 36574910273269,
                           5548175508461272, 6399487244535238, 123455]

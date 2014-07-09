@@ -1,4 +1,4 @@
-CC_Validator
-============
+CreditCard
+==========
 
-Python module for validating credit cards
+A Python 3 module for working with credit card numbers.

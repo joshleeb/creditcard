@@ -1,4 +1,4 @@
-class Luhn:
+class LuhnValidator:
   def __init__(self):
     pass
 

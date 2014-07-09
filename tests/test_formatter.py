@@ -1,4 +1,4 @@
-from cc_val.formatter import Formatter
+from creditcard.formatter import Formatter
 from nose.tools import raises
 
 
