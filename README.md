@@ -5,7 +5,7 @@ CreditCard is a Python 3 module which aids in the validation and generation of c
 
 ## Getting Started
 
-To import the module add the following to your input list:
+To import the module add the following to your python file:
 
 #### Luhn (Generator and Validator)
     from creditcard.luhn import LuhnValidator
