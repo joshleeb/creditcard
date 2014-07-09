@@ -15,7 +15,7 @@ class LuhnValidator:
   def is_valid(self, seq):
     seq = str(seq)
     if not seq.isdigit():
-      raise TypeError("Sequence must be of type: str or int")
+      raise TypeError("Sequence mus be a string or positive integer.")
     return int(seq[-1]) == self.calculate_check_digit(seq[:-1])
 
   def digits_of(self, n):
