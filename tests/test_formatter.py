@@ -43,6 +43,14 @@ class TestFormatter:
     for n in self.discover_numbers:
       yield self.check_discover_numbers, n
 
+  def test_get_formats_if_unknown_format(self):
+    unknown_format = 1234567890
+    assert self.formatter.get_format(unknown_format) == ["Unknown"]
+
+  def test_get_formats_if_dual_format(self):
+    dual_format = 4508077077058854
+    assert self.formatter.get_format(dual_format) == ["VISA", "VISA ELECTRON"]
+
   def check_visa_numbers(self, n):
     assert self.formatter.is_visa(n) is True
 
