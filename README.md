@@ -2,7 +2,6 @@
 
 CreditCard is a Python 3 module which aids in the validation and generation of credit card numbers using the Luhn algorithm.
 
-
 ## Getting Started
 
 To import the module add the following to your python file:
@@ -48,7 +47,7 @@ This method will return a valid credit card number in the form of a string. The
 number of a random length between 2 and 30 inclusive.
 
 ### Formatter
-To check whether a number matches the common format of a specific type of credit
+To check whether a number matches the format of a specified type of credit
 card use the following methods:
 
     formatter.is_visa(n)
@@ -58,13 +57,14 @@ card use the following methods:
     formatter.is_maestro(n)
     formatter.is_discover(n)
 
-Each of these method will return `True` or `False` on whether the given number
-`n` matches the format tested.
+Each of these method will return `True` or `False` depending on whether the given number
+`n` matches the format tested. As with the Validator and Generator, `n` can be
+either a string or an integer.
 
 To get the format of a number:
+
     formatter.get_format(n)
 
 This method will return a list of the formats the number `n` complies with. If
 the number doesn't match any formats then the method will return a list with the
 single string `"Unknown"`.
-
