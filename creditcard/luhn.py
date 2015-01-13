@@ -2,10 +2,15 @@ import random
 
 
 class LuhnValidator:
+    """
+    Determines whether a credit card number is valid using the Luhn algorithm.
+    """
+
     def __init__(self):
         pass
 
     def calculate_check_digit(self, seq):
+        """Calculates the check digit of a credit card."""
         digits, checksum = self.digits_of(seq), 0
         even_digits, odd_digits = self.even_loc(digits), self.odd_loc(digits)
 
@@ -16,28 +21,35 @@ class LuhnValidator:
         return check_digit
 
     def is_valid(self, seq):
+        """Checks if the credit card number is valid."""
         seq = str(seq)
         if not seq.isdigit():
             raise TypeError("Sequence mus be a string or positive integer.")
         return int(seq[-1]) == self.calculate_check_digit(seq[:-1])
 
     def digits_of(self, n):
+        """Returns a list of the digits of the credit card number."""
         return [int(d) for d in str(n)]
 
     def even_loc(self, seq):
-        """ Returns a list of the element of even indexes within seq """
+        """Returns a list of the elements with even indexes within seq."""
         return seq[-2::-2]
 
     def odd_loc(self, seq):
-        """ Returns a list of the element of odd indexes within seq """
+        """Returns a list of the elements with odd indexes within seq."""
         return seq[-1::-2]
 
 
 class LuhnGenerator:
+    """
+    Generates a random, valid credit card number.
+    """
+
     def __init__(self):
         self.luhn_validator = LuhnValidator()
 
     def generate(self, length=None):
+        """Returns a random, valid credit card number."""
         number_list = []
 
         if length is None:
