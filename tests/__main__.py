@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-#from luhn_spec import TestFormatter, TestGenerator
+from luhn_spec import TestValidator, TestGenerator
 from formatter_spec import TestFormatter
 
 
