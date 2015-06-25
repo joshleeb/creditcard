@@ -1,0 +1,5 @@
+__title__ = 'creditcard'
+__version__ = '0.2.0'
+__author__ = 'Josh Leeb-du Toit'
+__license__ = 'MIT'
+__copyright__ = 'Copyright 2015 Josh Leeb-du Toit'
